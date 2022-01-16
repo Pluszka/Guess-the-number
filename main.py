@@ -15,10 +15,10 @@ answer=randint(1,100)
 levels_options=['h','e']
 
 def game():
-
   lvl=None
   while not lvl in levels_options:
     clearConsole()
+    print(logo)
     lvl=input('Let\'s guess the number! \nPlease choose a level of difficulty "e" for easy or "h" for hard.').lower()
 
   if lvl=='e':
@@ -30,10 +30,10 @@ def game():
   for guess_attemps in range(1,attemps+1):
     guess=int(input('Type your guess: '))
     if guess==answer:
-      print('You guessed!')
+      print('You guessed!\n', win)
       break
     elif guess_attemps==attemps:
-      print('You lose.')
+      print(lose)
       break
     elif guess<answer:
       print('Too low.')
@@ -48,3 +48,4 @@ def game():
     game()
 
 game()
+print(end)
