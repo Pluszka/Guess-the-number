@@ -22,24 +22,25 @@ def game():
     lvl=input('Let\'s guess the number! \nPlease choose a level of difficulty "e" for easy or "h" for hard.').lower()
 
   if lvl=='e':
-    attemps=5
-  else:
     attemps=10
+  else:
+    attemps=5
   print(f'You have {attemps}, gl <3')
 
-  for guess_attemps in range(attemps):
+  for guess_attemps in range(1,attemps+1):
     guess=int(input('Type your guess: '))
     if guess==answer:
       print('You guessed!')
       break
     elif guess_attemps==attemps:
       print('You lose.')
+      break
     elif guess<answer:
       print('Too low.')
     else:
       print('Too high.')
     left=attemps-guess_attemps
-    print('{left} attemps left.')
+    print(f'{left} attemps left.')
     
   print(f'The answer was {answer}')
   new_game=input('Will you play again? (Y for yes/ anything for no)').upper()
