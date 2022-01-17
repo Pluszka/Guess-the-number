@@ -28,7 +28,7 @@ def game():
   print(f'You have {attemps}, gl <3')
 
   for guess_attemps in range(1,attemps+1):
-    guess=int(input('Type your guess: '))
+    guess=int(input('Type your guess. (It sholud be between 1 and 100): '))
     if guess==answer:
       print('You guessed!\n', win)
       break
